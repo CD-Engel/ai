@@ -1,12 +1,5 @@
 [
   {
-    "objectID": "sources/kapitel1.html",
-    "href": "sources/kapitel1.html",
-    "title": "\n        \n         AI für Philosophen",
-    "section": "",
-    "text": "Gerd Graßhoff\n\n\nEin Zitat eines Satzes zur weitergehenen Interpretation\n\n\n\n\n\n\n\nNote\n\n\n\nWe will only give some formatting elements. Authors can refer to the Quarto web page for a complete view of the formatting possibilities.\n\n\n\n\nHide/Show the code\nimport plotly.express as px\ndf = px.data.tips()\nfig = px.histogram(df, x=\"total_bill\", y=\"tip\", color=\"sex\",\n                   marginal=\"box\", # or violin, rug\n                   hover_data=df.columns)\nfig\n\n\n\n\n                                                \nFigure 1: A simple python plotly example\n\n\n\n\n0.1 Definition\nNN weiß, dass P der Fall ist, genau dann, wenn:\n\nP ist wahr. (oder P ist der Fall)\nNN glaubt, dass P der Fall ist, und\nNN hat eine gute Begründung dafür, dass P der Fall ist.\n\n\n\n\n\n\n\nReusehttps://creativecommons.org/licenses/by/4.0/"
-  },
-  {
     "objectID": "lecture/folien1.html#zeiten-und-orte",
     "href": "lecture/folien1.html#zeiten-und-orte",
     "title": "Vorlesung 1",
