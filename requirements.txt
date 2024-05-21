@@ -3,3 +3,5 @@ groq
 openai
 streamlit-option-menu
 anthropic
+ollama
+
