@@ -1,2 +1,3 @@
 pandas
-Groq
+groq
+streamlit-option-menu
