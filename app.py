@@ -1,8 +1,6 @@
 import os
 import streamlit as st
 from streamlit_option_menu import option_menu
-from groq import Groq
-from vorlesungtools import Instruct
 from instruct import instruct_execute
 
 st.set_page_config(
@@ -11,7 +9,6 @@ st.set_page_config(
     layout="wide",
 )
 
-instruct = Instruct()
 
 def get_instruction():
     state['response'],_ = instruct_execute(state['sys_msg'], state['text'], state['model'])
