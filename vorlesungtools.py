@@ -1,5 +1,5 @@
 import streamlit as st
-import Groq
+from groq import Groq
 
 class Instruct:
     def __init__(self, model="llama3-70b-8192"):
