@@ -16,7 +16,7 @@ def instruction(sys_mess,instruct,model="llama3-70b-8192"):
     )
     return message.choices[0].message.content
 
-init_values = {'text': 'Test: Wie hiess die zweite Ehefrau von Leonhard Euler', 'response': ''}
+init_values = {'text': 'Test: Wie hiess die zweite Ehefrau von Leonhard Euler, und wann lebte sie?', 'response': ''}
 st.session_state.update({key: st.session_state.get(key, value) for key, value in init_values.items()})
 
 st.session_state['text'] = st.text_area("Instruktion", st.session_state['text'])
