@@ -1,3 +1,4 @@
 pandas
 groq
+openai
 streamlit-option-menu
