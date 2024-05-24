@@ -31,5 +31,5 @@ with st.sidebar:
     if st.button("Senden"):
         get_instruction()
 
-state['text'] = st.text_area("Ihre Instruktion", state['text'])
+state['text'] = st.text_area("Instruktion", state['text'])
 st.text_area("Antwort", state['response'],height=600)
