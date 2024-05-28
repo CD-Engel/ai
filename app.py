@@ -23,7 +23,7 @@ def page_ai():
 def page_settings():
     state['instr_height']=st.number_input("instruction height",step=1,value=state['instr_height'])
 
-init_values = {'text': '', 'sys_msg':'','response': '', 'model': 'groq-llama3',"instr_height":600}
+init_values = {'text': '', 'sys_msg':'','response': '', 'model': 'groq-llama3',"instr_height":500}
 state = st.session_state
 state.update({key: state.get(key, value) for key, value in init_values.items()})
 
