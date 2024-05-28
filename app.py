@@ -14,10 +14,11 @@ def get_instruction():
 
 def page_ai():
     state['text'] = st.text_area("Instruktion", state['text'],height=state["instr_height"])
-    st.text_area("Antwort", state['response'],height=600)
+    head="**"+state['model']+"**\n\n"
+    st.markdown(head+state['response'])
 
 def page_settings():
-    models = ["claude-opus","claude-haiku","groq-llama3","groq-mixtral","aya-35b","phi3-medium"]
+    models = ["claude-haiku","groq-llama3","groq-mixtral"]
     state['model'] = st.sidebar.selectbox('Select model', models, index=2)
     state['instr_height']=st.number_input("instruction height",step=1,value=state['instr_height'])
 
