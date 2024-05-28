@@ -17,7 +17,7 @@ def page_ai():
     models = ["claude-haiku","groq-llama3","groq-mixtral"]
     state['model'] = st.sidebar.selectbox('Select model', models, index=1)
     state['text'] = st.text_area("Instruktion", state['text'],height=state["instr_height"])
-    head="**"+state['model']+"**\n\n"
+    head="\n---\nVerwendetes LLM model: **"+state['model']+"**\n\n---\n\n"
     st.markdown(head+state['response'])
 
 def page_settings():
