@@ -17,6 +17,8 @@ def instruct_execute(sys_mess, instruct, model_short):
         'llama3': {'model':'llama3','vendor': 'ollama', 'api_key': ''},
         'llama3-70': {'model':'llama3:70b','vendor': 'ollama', 'api_key': ''},
         'mixtral': {'model':'mixtral:8x22b','vendor':'ollama','api_key': ''},
+        'phi3-medium': {'model':'phi3:medium','vendor': 'ollama', 'api_key': ''},
+        'aya-35b': {'model':'aya:35b','vendor':'ollama','api_key': ''},
         'llama3-chatqa': {'model':'llama3-chatqa:70b-v1.5-q4_1','vendor': 'ollama', 'api_key': ''},
     }
 

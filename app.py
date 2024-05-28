@@ -9,11 +9,19 @@ st.set_page_config(
     layout="wide",
 )
 
-
 def get_instruction():
     state['response'],_ = instruct_execute(state['sys_msg'], state['text'], state['model'])
 
-init_values = {'text': '', 'sys_msg':'','response': '', 'model': 'groq-llama3'}
+def page_ai():
+    state['text'] = st.text_area("Instruktion", state['text'],height=state["instr_height"])
+    st.text_area("Antwort", state['response'],height=600)
+
+def page_settings():
+    models = ["claude-opus","claude-haiku","groq-llama3","groq-mixtral","aya-35b","phi3-medium"]
+    state['model'] = st.sidebar.selectbox('Select model', models, index=2)
+    state['instr_height']=st.number_input("instruction height",step=1,value=state['instr_height'])
+
+init_values = {'text': '', 'sys_msg':'','response': '', 'model': 'groq-llama3',"instr_height":400}
 state = st.session_state
 state.update({key: state.get(key, value) for key, value in init_values.items()})
 
@@ -23,13 +31,11 @@ st.sidebar.title('**Lettre AI**')
 with st.sidebar:
     selected = option_menu("", ["AI", 'Settings'], 
         icons=['house', 'gear'], menu_icon="cast", default_index=0)
-    selected
+    if selected == "AI":
+        if st.button("reasoning", type="primary"):
+            get_instruction()
 
-    models = ["claude-opus","claude-haiku","groq-llama3","groq-mixtral"]
-    state['model'] = st.sidebar.selectbox('Select model', models, index=2)
-
-    if st.button("Senden"):
-        get_instruction()
-
-state['text'] = st.text_area("Instruktion", state['text'])
-st.text_area("Antwort", state['response'],height=600)
+if selected == "AI":
+    page_ai()
+elif selected == "Settings":
+    page_settings()

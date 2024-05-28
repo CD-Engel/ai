@@ -1,0 +1,414 @@
+[
+  {
+    "sentence": "The time required to complete the project is two weeks.",
+    "meaning": "Duration"
+  },
+  {
+    "sentence": "What time is it now?",
+    "meaning": "Point in Time"
+  },
+  {
+    "sentence": "The Renaissance was a time of great artistic achievement.",
+    "meaning": "Era/Epoch"
+  },
+  {
+    "sentence": "We had a wonderful time at the concert last night.",
+    "meaning": "Experience/Occurrence"
+  },
+  {
+    "sentence": "In times of economic hardship, people tend to save more.",
+    "meaning": "Temporal Context"
+  },
+  {
+    "sentence": "She visits her grandmother three times a week.",
+    "meaning": "Frequency"
+  },
+  {
+    "sentence": "In my youth, I had plenty of free time.",
+    "meaning": "Age/Period of Life"
+  },
+  {
+    "sentence": "It’s hard to believe how much time has passed since we last met.",
+    "meaning": "Calendar Time"
+  },
+  {
+    "sentence": "She timed the runners with a stopwatch.",
+    "meaning": "Measure Duration (Verb)"
+  },
+  {
+    "sentence": "He timed his departure to avoid the rush hour.",
+    "meaning": "Plan/Schedule (Verb)"
+  },
+  {
+    "sentence": "They timed their movements perfectly in the dance routine.",
+    "meaning": "Synchronize (Verb)"
+  },
+  {
+    "sentence": "This is a time-sensitive document that must be delivered today.",
+    "meaning": "Time-sensitive (Adjective)"
+  },
+  {
+    "sentence": "Your timely advice saved the project.",
+    "meaning": "Timely (Adjective)"
+  },
+  {
+    "sentence": "Reading through all the documents is a time-consuming task.",
+    "meaning": "Time-consuming (Adjective)"
+  },
+  {
+    "sentence": "He arrived just in time to catch the train.",
+    "meaning": "Just in Time (Adverb)"
+  },
+  {
+    "sentence": "She is always on time for her meetings.",
+    "meaning": "On Time (Adverb)"
+  },
+  {
+    "sentence": "He achieved so much in his lifetime.",
+    "meaning": "Lifetime (Compound Noun)"
+  },
+  {
+    "sentence": "We had a great conversation during mealtime.",
+    "meaning": "Mealtime (Compound Noun)"
+  },
+  {
+    "sentence": "Her bedtime routine includes reading a book.",
+    "meaning": "Bedtime (Compound Noun)"
+  },
+  {
+    "sentence": "He tries to be very productive during his worktime.",
+    "meaning": "Worktime (Compound Noun)"
+  },
+  {
+    "sentence": "The server experienced downtime last night.",
+    "meaning": "Downtime (Compound Noun)"
+  },
+  {
+    "sentence": "They finished the project ahead of time.",
+    "meaning": "Ahead of Time (Idiomatic Expression)"
+  },
+  {
+    "sentence": "She finished her assignment in no time.",
+    "meaning": "In No Time (Idiomatic Expression)"
+  },
+  {
+    "sentence": "Take your time to think it over.",
+    "meaning": "Take Your Time (Idiomatic Expression)"
+  },
+  {
+    "sentence": "She is biding her time before making her move.",
+    "meaning": "Bide One's Time (Idiomatic Expression)"
+  },
+  {
+    "sentence": "The coach called for a time out.",
+    "meaning": "Time Out (Idiomatic Expression)"
+  },
+  {
+    "sentence": "Time's up for submitting your answers.",
+    "meaning": "Time's Up (Idiomatic Expression)"
+  },
+  {
+    "sentence": "The cycle time of the washing machine is 45 minutes.",
+    "meaning": "Cycle Time (Technical Term)"
+  },
+  {
+    "sentence": "The lead time for new orders is six weeks.",
+    "meaning": "Lead Time (Technical Term)"
+  },
+  {
+    "sentence": "The response time of the server is very fast.",
+    "meaning": "Response Time (Technical Term)"
+  },
+  {
+    "sentence": "The elapsed time for the race was two hours.",
+    "meaning": "Elapsed Time (Technical Term)"
+  },
+  {
+    "sentence": "Medieval times were characterized by feudalism.",
+    "meaning": "Medieval Times (Historical/Cultural Usage)"
+  },
+  {
+    "sentence": "In modern times, technology has revolutionized communication.",
+    "meaning": "Modern Times (Historical/Cultural Usage)"
+  },
+  {
+    "sentence": "Ancient times saw the rise of great civilizations.",
+    "meaning": "Ancient Times (Historical/Cultural Usage)"
+  },
+  {
+    "sentence": "The theory of relativity describes how space-time is curved by gravity.",
+    "meaning": "Space-Time (Scientific/Philosophical Context)"
+  },
+  {
+    "sentence": "Quantum time deals with events at the subatomic level.",
+    "meaning": "Quantum Time (Scientific/Philosophical Context)"
+  },
+  {
+    "sentence": "She arrived just in time to avoid the storm.",
+    "meaning": "Just in Time (Adverb)"
+  },
+  {
+    "sentence": "The train left right on time.",
+    "meaning": "On Time (Adverb)"
+  },
+  {
+    "sentence": "The project was completed in record time.",
+    "meaning": "Duration"
+  },
+  {
+    "sentence": "He kept track of the time using his watch.",
+    "meaning": "Point in Time"
+  },
+  {
+    "sentence": "World War II was a time of great upheaval.",
+    "meaning": "Era/Epoch"
+  },
+  {
+    "sentence": "I remember the first time I visited Paris.",
+    "meaning": "Experience/Occurrence"
+  },
+  {
+    "sentence": "During times of crisis, communities often come together.",
+    "meaning": "Temporal Context"
+  },
+  {
+    "sentence": "She calls her parents three times a day.",
+    "meaning": "Frequency"
+  },
+  {
+    "sentence": "Retirement is a time for relaxation and leisure.",
+    "meaning": "Age/Period of Life"
+  },
+  {
+    "sentence": "We mark time by celebrating birthdays and anniversaries.",
+    "meaning": "Calendar Time"
+  },
+  {
+    "sentence": "He timed his speech perfectly to fit within the program.",
+    "meaning": "Measure Duration (Verb)"
+  },
+  {
+    "sentence": "We need to time our visit to coincide with the festival.",
+    "meaning": "Plan/Schedule (Verb)"
+  },
+  {
+    "sentence": "The dancers timed their movements to the music.",
+    "meaning": "Synchronize (Verb)"
+  },
+  {
+    "sentence": "The report is time-sensitive and needs to be reviewed immediately.",
+    "meaning": "Time-sensitive (Adjective)"
+  },
+  {
+    "sentence": "Her timely intervention prevented a disaster.",
+    "meaning": "Timely (Adjective)"
+  },
+  {
+    "sentence": "Completing the survey was a time-consuming process.",
+    "meaning": "Time-consuming (Adjective)"
+  },
+  {
+    "sentence": "He arrived just in time to see the fireworks.",
+    "meaning": "Just in Time (Adverb)"
+  },
+  {
+    "sentence": "The flight departed on time despite the weather.",
+    "meaning": "On Time (Adverb)"
+  },
+  {
+    "sentence": "Her lifetime achievements were honored at the ceremony.",
+    "meaning": "Lifetime (Compound Noun)"
+  },
+  {
+    "sentence": "Mealtime is an important family tradition.",
+    "meaning": "Mealtime (Compound Noun)"
+  },
+  {
+    "sentence": "He reads a story to his children at bedtime.",
+    "meaning": "Bedtime (Compound Noun)"
+  },
+  {
+    "sentence": "She tries to maximize her productivity during worktime.",
+    "meaning": "Worktime (Compound Noun)"
+  },
+  {
+    "sentence": "The system experienced downtime during the upgrade.",
+    "meaning": "Downtime (Compound Noun)"
+  },
+  {
+    "sentence": "They completed the task ahead of time.",
+    "meaning": "Ahead of Time (Idiomatic Expression)"
+  },
+  {
+    "sentence": "We will have the results in no time.",
+    "meaning": "In No Time (Idiomatic Expression)"
+  },
+  {
+    "sentence": "Take your time to make the right decision.",
+    "meaning": "Take Your Time (Idiomatic Expression)"
+  },
+  {
+    "sentence": "He is biding his time until the right opportunity comes along.",
+    "meaning": "Bide One's Time (Idiomatic Expression)"
+  },
+  {
+    "sentence": "The referee called for a time out.",
+    "meaning": "Time Out (Idiomatic Expression)"
+  },
+  {
+    "sentence": "Time's up for the quiz.",
+    "meaning": "Time's Up (Idiomatic Expression)"
+  },
+  {
+    "sentence": "The cycle time of this process needs to be reduced.",
+    "meaning": "Cycle Time (Technical Term)"
+  },
+  {
+    "sentence": "The lead time for manufacturing these parts is too long.",
+    "meaning": "Lead Time (Technical Term)"
+  },
+  {
+    "sentence": "We need to improve our response time to customer inquiries.",
+    "meaning": "Response Time (Technical Term)"
+  },
+  {
+    "sentence": "Track the elapsed time of each session to monitor progress.",
+    "meaning": "Elapsed Time (Technical Term)"
+  },
+  {
+    "sentence": "Medieval times were marked by the rise of castles and knights.",
+    "meaning": "Medieval Times (Historical/Cultural Usage)"
+  },
+  {
+    "sentence": "Modern times have brought about significant technological advances.",
+    "meaning": "Modern Times (Historical/Cultural Usage)"
+  },
+  {
+    "sentence": "In ancient times, people relied on the sun to measure time.",
+    "meaning": "Ancient Times (Historical/Cultural Usage)"
+  },
+  {
+    "sentence": "Space-time is a fundamental concept in the theory of relativity.",
+    "meaning": "Space-Time (Scientific/Philosophical Context)"
+  },
+  {
+    "sentence": "Quantum time involves understanding phenomena at the smallest scales.",
+    "meaning": "Quantum Time (Scientific/Philosophical Context)"
+  },
+  {
+    "sentence": "She arrived just in time to avoid the traffic.",
+    "meaning": "Just in Time (Adverb)"
+  },
+  {
+    "sentence": "The event started right on time.",
+    "meaning": "On Time (Adverb)"
+  },
+  {
+    "sentence": "The exam took a long time to complete.",
+    "meaning": "Duration"
+  },
+  {
+    "sentence": "She checked the time on her phone.",
+    "meaning": "Point in Time"
+  },
+  {
+    "sentence": "The 1960s were a time of great social change.",
+    "meaning": "Era/Epoch"
+  },
+  {
+    "sentence": "The first time I tried sushi was an unforgettable experience.",
+    "meaning": "Experience/Occurrence"
+  },
+  {
+    "sentence": "In times of peace, nations can prosper.",
+    "meaning": "Temporal Context"
+  },
+  {
+    "sentence": "He checks his emails multiple times a day.",
+    "meaning": "Frequency"
+  },
+  {
+    "sentence": "Childhood is a magical time in one's life.",
+    "meaning": "Age/Period of Life"
+  },
+  {
+    "sentence": "The holiday season is a special time of year.",
+    "meaning": "Calendar Time"
+  },
+  {
+    "sentence": "The chef timed the dish to perfection.",
+    "meaning": "Measure Duration (Verb)"
+  },
+  {
+    "sentence": "We need to time our departure to miss the traffic.",
+    "meaning": "Plan/Schedule (Verb)"
+  },
+  {
+    "sentence": "The musicians timed their entrances with the conductor.",
+    "meaning": "Synchronize (Verb)"
+  },
+  {
+    "sentence": "The document is time-sensitive and must be handled urgently.",
+    "meaning": "Time-sensitive (Adjective)"
+  },
+  {
+    "sentence": "The timely arrival of the police averted a potential disaster.",
+    "meaning": "Timely (Adjective)"
+  },
+  {
+    "sentence": "Filling out the forms was a time-consuming activity.",
+    "meaning": "Time-consuming (Adjective)"
+  },
+  {
+    "sentence": "He managed to catch the bus just in time.",
+    "meaning": "Just in Time (Adverb)"
+  },
+  {
+    "sentence": "The train always leaves on time.",
+    "meaning": "On Time (Adverb)"
+  },
+  {
+    "sentence": "She dedicated her lifetime to helping others.",
+    "meaning": "Lifetime (Compound Noun)"
+  },
+  {
+    "sentence": "Mealtime is an opportunity for family bonding.",
+    "meaning": "Mealtime (Compound Noun)"
+  },
+  {
+    "sentence": "They have a strict bedtime routine for their children.",
+    "meaning": "Bedtime (Compound Noun)"
+  },
+  {
+    "sentence": "He uses his worktime efficiently to get tasks done.",
+    "meaning": "Worktime (Compound Noun)"
+  },
+  {
+    "sentence": "The server was down for an hour during the downtime.",
+    "meaning": "Downtime (Compound Noun)"
+  },
+  {
+    "sentence": "The team completed the project ahead of time.",
+    "meaning": "Ahead of Time (Idiomatic Expression)"
+  },
+  {
+    "sentence": "She finished her homework in no time.",
+    "meaning": "In No Time (Idiomatic Expression)"
+  },
+  {
+    "sentence": "Take your time to review the details carefully.",
+    "meaning": "Take Your Time (Idiomatic Expression)"
+  },
+  {
+    "sentence": "He is biding his time before making the big decision.",
+    "meaning": "Bide One's Time (Idiomatic Expression)"
+  },
+  {
+    "sentence": "The coach called a time out to discuss strategy.",
+    "meaning": "Time Out (Idiomatic Expression)"
+  },
+  {
+    "sentence": "Time's up for the test, please put down your pencils.",
+    "meaning": "Time's Up (Idiomatic Expression)"
+  }
+]
