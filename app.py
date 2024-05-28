@@ -13,13 +13,13 @@ def get_instruction():
     state['response'],_ = instruct_execute(state['sys_msg'], state['text'], state['model'])
 
 def page_ai():
+    models = ["claude-haiku","groq-llama3","groq-mixtral"]
+    state['model'] = st.sidebar.selectbox('Select model', models, index=2)
     state['text'] = st.text_area("Instruktion", state['text'],height=state["instr_height"])
     head="**"+state['model']+"**\n\n"
     st.markdown(head+state['response'])
 
 def page_settings():
-    models = ["claude-haiku","groq-llama3","groq-mixtral"]
-    state['model'] = st.sidebar.selectbox('Select model', models, index=2)
     state['instr_height']=st.number_input("instruction height",step=1,value=state['instr_height'])
 
 init_values = {'text': '', 'sys_msg':'','response': '', 'model': 'groq-llama3',"instr_height":400}
