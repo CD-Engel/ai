@@ -17,8 +17,14 @@ def page_ai():
     models = ["claude-haiku","groq-llama3","groq-mixtral"]
     state['model'] = st.sidebar.selectbox('Select model', models, index=1)
     state['text'] = st.text_area("Instruktion", state['text'],height=state["instr_height"])
-    head="\n---\nVerwendetes LLM model: **"+state['model']+"**\n\n---\n\n"
-    st.markdown(head+state['response'])
+    if st.button("reasoning", type="primary"):
+        get_instruction()
+        head="\n---\nVerwendetes LLM model: **"+state['model']+"**\n\n---\n\n"
+        st.markdown(f"""
+            <div style="background-color:#808000;padding:10px;border-radius:10px; height:500px; overflow:auto">
+            {head+state['response']}
+            </div>
+        """, unsafe_allow_html=True)
 
 def page_settings():
     state['instr_height']=st.number_input("instruction height",step=1,value=state['instr_height'])
@@ -55,9 +61,7 @@ st.sidebar.title('**Lettre AI**')
 with st.sidebar:
     selected = option_menu("", ["AI", 'Settings'], 
         icons=['house', 'gear'], menu_icon="cast", default_index=0)
-    if selected == "AI":
-        if st.button("reasoning", type="primary"):
-            get_instruction()
+
 
 if selected == "AI":
     page_ai()
