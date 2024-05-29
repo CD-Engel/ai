@@ -49,7 +49,6 @@ Use steps of reasoning:
 Output format is markdown format using LaTeX expressions
 '''
 
-
 state['sys_msg']="you are an assistant. Answer exactly what the user asks and do not provide additional information. You answer in English is elegant without exageration."
 
 st.sidebar.title('**Lettre AI**')
