@@ -1,0 +1,42 @@
+- text: >
+    If mankind produces too much CO2, the water level of the ocean rises. 
+
+    The standard of living in Italy is very high and mankind produces too much CO2. 
+    
+    Therefore the water level rises.
+  comment: >
+    This is a valid argument. The conclusion follows from the premises.
+- text: >
+    If mankind produces too much CO2, then the water level of the ocean rises. 
+
+    The standard of living in Italy is very high and mankind produces too much CO2. 
+    
+    Therefore the water level rises.
+  comment: >
+    This is a valid argument. The conclusion follows from the premises.
+- text: >
+    If mankind produces too much CO2, the water level of the ocean rises. 
+
+    The standard of living in Italy is very high and mankind produces too much CO2. 
+    
+    The standard of living in India is not as high as in Italy. 
+    
+    Tomorrow there are elections in India.
+    
+    Therefore the water level rises.
+  comment: >
+    This is a valid argument with additional irrelevant assumptions.
+- text: >
+    If mankind produces too much CO2, the water level of the ocean rises. 
+    
+    The standard of living in Italy is very high and mankind produces too much CO2. 
+    
+    The standard of living in India is not as high as in Italy. 
+    
+    Tomorrow there are elections in India.
+    
+    The standard of living does not lead to too much CO2.
+    
+    Therefore the water level rises.
+  comment: >
+    This is an invalid argument. The conclusion does not follow from the premises, if the second and the pre-last assumption are considered contradictory. Contradiction always spoil the validity of arguments.
