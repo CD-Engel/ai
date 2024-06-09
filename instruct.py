@@ -6,7 +6,7 @@ import ollama
 
 
 
-def instruct_execute(sys_mess, instruct, model_short):
+def instruct(sys_mess, instruct, model_short):
     model_vendors = {
         'claude-opus': {"model":"claude-3-opus-20240229",'vendor': 'anthropic', 'api_key': 'ANTHROPIC_API_KEY'},
         'claude-haiku': {'model': 'claude-3-haiku-20240307','vendor': 'anthropic', 'api_key': 'ANTHROPIC_API_KEY'},
@@ -18,7 +18,7 @@ def instruct_execute(sys_mess, instruct, model_short):
         'llama3-70': {'model':'llama3:70b','vendor': 'ollama', 'api_key': ''},
         'mixtral': {'model':'mixtral:8x22b','vendor':'ollama','api_key': ''},
         'phi3-medium': {'model':'phi3:medium','vendor': 'ollama', 'api_key': ''},
-        'aya-35b': {'model':'aya:35b','vendor':'ollama','api_key': ''},
+        'qwen': {'model':'qwen2:72b','vendor':'ollama','api_key': ''},
         'llama3-chatqa': {'model':'llama3-chatqa:70b-v1.5-q4_1','vendor': 'ollama', 'api_key': ''},
     }
 
