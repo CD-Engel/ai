@@ -19,7 +19,8 @@ def instruct(sys_mess, instruct, model_short):
         'mixtral': {'model':'mixtral:8x22b','vendor':'ollama','api_key': ''},
         'phi3-medium': {'model':'phi3:medium','vendor': 'ollama', 'api_key': ''},
         'qwen': {'model':'qwen2:72b','vendor':'ollama','api_key': ''},
-        'llama3-chatqa': {'model':'llama3-chatqa:70b-v1.5-q4_1','vendor': 'ollama', 'api_key': ''},
+        'dolphin': {'model':'mradermacher/dolphin-2.9.2-qwen2-72b-GGUF','vendor':'lm-studio','api_key':'lm-studio'},
+        'command-r': {'model':'command-r-plus','vendor': 'ollama', 'api_key': ''},
     }
 
     if model_short not in model_vendors:
@@ -75,5 +76,16 @@ def instruct(sys_mess, instruct, model_short):
         )
         gg = response['message']['content']
 
+    elif vendor == 'lm-studio':
+        client = OpenAI(base_url="http://localhost:1234/v1", api_key="lm-studio")
+        response = client.chat.completions.create(
+            model=model,
+            messages=[
+                {"role": "system", "content": sys_mess},
+                {"role": "user", "content": instruct}
+            ]
+        )
+        gg = response.choices[0].message.content
+   
     return gg, vendor
 
