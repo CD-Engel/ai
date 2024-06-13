@@ -1,28 +1,32 @@
-
 from pathlib import Path
-from jinja2 import Environment, FileSystemLoader
-import re
+from jinja2 import Environment, FileSystemLoader, Template
 import yaml
 import streamlit as st
+from jinja2.meta import find_undeclared_variables
 
 class Jinja:
-    def __init__(self, tmpl_dir):
-        tmpl_dir = Path(tmpl_dir)
-        self.env = Environment(loader=FileSystemLoader(str(tmpl_dir)))
+    def __init__(self, template_dir):
+        self.env = Environment(loader=FileSystemLoader(template_dir))
         self.tmpls = [
             {
-                "file": f.stem,
-                "params": re.findall(r"{{\s*([a-zA-Z_][a-zA-Z0-9_]*)\s*}}", self.env.loader.get_source(self.env, f.name)[0]),
-                "content": self.env.get_template(f.name).render()
+                'file': t,
+                'content': self.env.loader.get_source(self.env, t)[0],
+                'params': list(find_undeclared_variables(self.env.parse(self.env.loader.get_source(self.env, t)[0])))
             }
-            for f in tmpl_dir.glob("*.j2")
+            for t in self.env.list_templates()
         ]
 
+    def render(self, file_stem, **kwargs):
+        file_name = f"{file_stem}.j2"
+        template = next((t for t in self.tmpls if t['file'] == file_name), None)
+        if template is not None:
+            jinja_template = self.env.from_string(template['content'])
+            return jinja_template.render(**kwargs)
+        else:
+            raise ValueError(f"Template '{file_name}' not found.")
+
     def list(self):
-        result = []
-        for tmpl in self.tmpls:
-            result.append({"file": tmpl['file'], "param": tmpl['params']})
-        return result
+        return [{"file": tmpl['file'], "params": tmpl['params']} for tmpl in self.tmpls]
 
     def show(self):
         for tmpl in self.tmpls:
@@ -34,7 +38,7 @@ class Jinja:
     def chain(self, file_stems, dpara):
         self.list_chain = [
             {
-                "file": f"{file_stem}.j2", 
+                "file": f"{file_stem}.j2",
                 "para": dpara.get(file_stem, {}),
             }
             for file_stem in file_stems
@@ -62,7 +66,6 @@ class Jinja:
                 dpara[chain_obj["file"]] = chain_obj["content"]
         self.join = join
         self.mermaid_chart = mermaid_chart + "```"
-    
 
 class Documents:
     def __init__(self, source_dir):

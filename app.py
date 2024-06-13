@@ -1,69 +1,63 @@
-import os
 import streamlit as st
 from streamlit_option_menu import option_menu
-from instruct import instruct_execute
-
-st.set_page_config(
-    page_title="Instruct",
-    page_icon="🤖",
-    layout="wide",
-)
+from pathlib import Path
+from jinja import Jinja, Documents
+from instruct import instruct
+from lettreSetting import appform
+from IPython.display import display,Markdown
 
 
-def get_instruction():
-    state['response'],_ = instruct_execute(state['sys_msg'], state['text'], state['model'])
-
-def page_ai():
-    models = ["claude-haiku","groq-llama3","groq-mixtral"]
-    state['model'] = st.sidebar.selectbox('Select model', models, index=1)
-    state['text'] = st.text_area("Instruktion", state['text'],height=state["instr_height"])
-    if st.button("reasoning", type="primary"):
-        get_instruction()
-        head="\n---\nVerwendetes LLM model: **"+state['model']+"**\n\n---\n\n"
-        st.markdown(f"""
-            <div style="background-color:#808000;padding:10px;border-radius:10px; height:500px; overflow:auto">
-            {head+state['response']}
-            </div>
-        """, unsafe_allow_html=True)
-
-def page_settings():
-    state['instr_height']=st.number_input("instruction height",step=1,value=state['instr_height'])
-
-init_values = {'text': '', 'sys_msg':'','response': '', 'model': 'groq-llama3',"instr_height":500}
-state = st.session_state
-state.update({key: state.get(key, value) for key, value in init_values.items()})
+class App:
+    def __init__(self):
+        appform()
+        self.model_list = ["groq-llama3", "claude-haiku", "qwen", "claude-opus", "gpt-4o","command-r"]
+        self.d = Documents("./documents")
+        self.t = Jinja("./templates")
+        self.msg = self.d.source["sysmsg"][0]["text"]
+        self.state = st.session_state
+        self.init_values = self.get_init_values()
+        self.initialize_state()
 
 
-state['text']= '''
-Use the method of truth-tables to determine, whether a given argument <argument> ARG </argument>  is
-valid or not.  Use always the same letter for the same proposition.
+    def get_init_values(self):
+        return {'text': '', 'sys_msg': self.msg, 'index': 1, 'response': '', 'model': "groq-llama3", "instr_height": 700, "arg": "", "msg": self.msg}
 
-<argument>
-Wenn die Menschheit zu viel CO2 erzeugt, steigt der Wasserspiegel des Ozeans. 
-Der Lebensstandard in Italien ist sehr hoch und die Menschheit erzeugt zu viel CO2. 
-Der Lebensstandard in Indien ist nicht so hoch wie in Italien. 
-Also steigt der Wasserspiegel.
-</argument>
- 
-Use steps of reasoning:
-
-  (i) tabulate the sentences in only two columns. Each row is one sentence. The conclusion as last row. The second column decompose the logical functions "and", "or", "if-then", "not".
-  (ii) An argument consists of  assumptions which imply the truth of  a conclusion.
-  (iii) Check the validity with a truth-table for validity: if the conclusion is true, all sentences as function of their propositions are true. 
-(iv) Check those rows for which the conclusion is true. For those  only columns containing  the assumptions must be true. Do not consider elementary propositions. 
-
-Output format is markdown format using LaTeX expressions
-'''
-
-state['sys_msg']="you are an assistant. Answer exactly what the user asks and do not provide additional information. You answer in English is elegant without exageration."
-
-st.sidebar.title('**Lettre AI**')
-with st.sidebar:
-    selected = option_menu("", ["AI", 'Settings'], 
-        icons=['house', 'gear'], menu_icon="cast", default_index=0)
+    def initialize_state(self):
+        if 'initialized' not in self.state:
+            self.state.update(self.init_values)
+            self.state['initialized'] = True
 
 
-if selected == "AI":
-    page_ai()
-elif selected == "Settings":
-    page_settings()
+    def update_state(self):
+        self.state["index"] = st.sidebar.number_input("Instruction index", step=1, value=self.state["index"])
+        arg = self.d.source["arguments"][self.state["index"]]["text"]
+        self.state["text"] = self.t.chain(['argument_valid', 'output_json'], {'argument_valid': {'argument': arg}})
+        self.state['text'] = st.text_area("Instruktion", self.state['text'], height=self.state["instr_height"])
+
+    def page_ai(self):
+        self.update_state()
+        if st.sidebar.button('reasoning',type="primary"):
+            self.state['response'], _ = instruct(self.state['sys_msg'], self.state['text'], self.state["model"])
+            ##st.markdown(self.state["response"], unsafe_allow_html=True)
+            gg = {"markdown": self.state["response"]}
+            ggg = self.t.chain(["output_md2html"], gg)
+            display(gg)
+            st.markdown(ggg, unsafe_allow_html=True)
+
+    def page_settings(self):
+        self.state['instr_height'] = st.number_input("instruction height", step=1, value=self.state['instr_height'])
+        self.state['model'] = st.selectbox("Choose model", self.model_list, index=self.model_list.index(self.state.get('model', 'groq-llama3')))
+
+### RUN
+    def run(self):
+        st.sidebar.title('**Lettre AI**')
+        with st.sidebar:
+            selected = option_menu("", ["Instruct", 'Settings'], icons=['house', 'house', 'gear'], menu_icon="cast", default_index=0)
+        if selected == "Instruct":
+            self.page_ai()
+        elif selected == "AI reasoning":
+            self.page_reasoning()
+        elif selected == "Settings":
+            self.page_settings()
+app = App()
+app.run()

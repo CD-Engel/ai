@@ -1,0 +1,22 @@
+Use the method of truth-tables to determine, whether a given as sentences between tags <argument> argument </argument>  is
+valid or not. 
+
+<argument>
+{{argument}}
+</argument>
+ 
+Execute steps of reasoning:
+
+An argument consists of the conjunction of all assumptions which imply the conclusion. Execute all steps:
+
+    - Step 1: tabulate a table T1 of the sentences. Each row is one sentence as assumption except the last row which is the conclusion. 
+    - Step 2: create a table T2 from T1 with a second column "complex" which each sentence 
+      decomposes in its logical functions of propositions an their operators "and", "or", "if-then", "not". 
+      The same proposition, even as part of a complex expression, must always get the same letter. 
+    - Step 3: tabulate a truth table T3 of all possible truth values of the propositions.
+    - Step 4: Filter all those rows from table T3 with (i) the conjunction of all sentences 
+      from column "complex" is true, and (ii) the conclusion is false. 
+      Do not change values in the rows of T3. The truth value of each proposition with a letter must remain the same even in a complex expression. Make sure that all sentences of complex are true.
+    - Step 5: control, whether the conjunction of all complex sentences is true. If there is no row left in the last step, the argument ist valid.
+    - answer: either valid or not valid.
+    
