@@ -41,7 +41,6 @@ class App:
             ##st.markdown(self.state["response"], unsafe_allow_html=True)
             gg = {"markdown": self.state["response"]}
             ggg = self.t.chain(["output_md2html"], gg)
-            display(gg)
             st.markdown(ggg, unsafe_allow_html=True)
 
     def page_settings(self):
