@@ -4,7 +4,7 @@ from pathlib import Path
 from jinja import Jinja, Documents
 from instruct import instruct
 from lettreSetting import appform
-from IPython.display import display,Markdown
+
 
 
 class App:
