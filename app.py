@@ -10,7 +10,7 @@ from IPython.display import display,Markdown
 class App:
     def __init__(self):
         appform()
-        self.model_list = ["groq-llama3", "claude-haiku", "qwen", "claude-opus", "gpt-4o","command-r"]
+        self.model_list = ["groq-llama3", "claude-haiku", "claude-opus", "gpt-4o"]
         self.d = Documents("./documents")
         self.t = Jinja("./templates")
         self.msg = self.d.source["sysmsg"][0]["text"]
